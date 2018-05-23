@@ -26,16 +26,6 @@ function main()
     });
 
    
-    var light = new THREE.PointLight();
-    light.position.set( 5, 5, 5 );
-    screen.scene.add( light );
-
-   
-    var material = new THREE.ShaderMaterial({
-        vertexColors: THREE.VertexColors,
-        vertexShader: document.getElementById('gouraud.vert').text,
-        fragmentShader: document.getElementById('gouraud.frag').text,
-    });
 
     
     screen.loop();
