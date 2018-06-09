@@ -27,8 +27,8 @@ function cube()
     document.body.appendChild( renderer.domElement );
 
     // var geometry = new THREE.BoxBufferGeometry( 200, 200, 200 );
-	// var texture = new THREE.TextureLoader().load( 'crate.gif' );
-    // var material = new THREE.MeshBasicMaterial( { map: texture } );
+	var texture = new THREE.TextureLoader().load( 'marvel.jpg' );
+    var material = new THREE.MeshBasicMaterial( { map: texture } );
 
     var vertices = [
         [ -1, -1, -1 ], // 0
@@ -58,11 +58,11 @@ function cube()
 
 
     var geometry = new THREE.Geometry();
-    // var material = new THREE.MeshLambertMaterial();
+    var material = new THREE.MeshLambertMaterial();
 
-    var mapUrl = "marvel.jpg";
-    var map = THREE.ImageUtils.loadTexture(mapUrl);
-    var material = new THREE.MeshPhongMaterial({map : map });
+    // var mapUrl = "marvel.jpg";
+    // var map = THREE.ImageUtils.loadTexture(mapUrl);
+    // var material = new THREE.MeshPhongMaterial({map : map });
 
 
     var nvertices = vertices.length;
