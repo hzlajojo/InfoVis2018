@@ -27,6 +27,7 @@ function cube1()
 	}
 	function animate() {
 		requestAnimationFrame( animate );
+		renderer.setClearColor(obj.color,1.0);// Color of renderer
 		mesh.rotation.x += obj.Rotation_X;
 		mesh.rotation.y += obj.Rotation_Y;
 		mesh.rotation.z += obj.Rotation_Z;
