@@ -27,8 +27,9 @@ function cube1()
 	}
 	function animate() {
 		requestAnimationFrame( animate );
-		mesh.rotation.x += 0.005;
-		mesh.rotation.y += 0.01;
+		mesh.rotation.x += obj.Rotation_X;
+		mesh.rotation.y += obj.Rotation_Y;
+		mesh.rotation.z += obj.Rotation_Z;
 		renderer.render( scene, camera );
 	}
 }
