@@ -14,6 +14,7 @@ function cube1()
 		mesh = new THREE.Mesh( geometry, material );
 		scene.add( mesh );
 		renderer = new THREE.WebGLRenderer( { antialias: true } );
+		renderer.setClearColor(obj.color,1.0);// Color of renderer
 		renderer.setPixelRatio( window.devicePixelRatio );
 		renderer.setSize( window.innerWidth, window.innerHeight );
 		document.body.appendChild( renderer.domElement );
@@ -34,3 +35,4 @@ function cube1()
 		renderer.render( scene, camera );
 	}
 }
+
