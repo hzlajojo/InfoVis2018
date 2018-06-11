@@ -4,8 +4,8 @@ function lobster()
     var screen = new KVS.THREEScreen();
 
     screen.init( volume, {
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: 400,
+        height: 400,
         enableAutoResize: false
     });
 
