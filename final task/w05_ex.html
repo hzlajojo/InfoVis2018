@@ -9,29 +9,33 @@
 
 	<script type="text/javascript" src="dat.gui.js"></script>
 	<script type="text/javascript">
-	  var obj = {
-		  message: 'Cube',
-  
+	 	  var obj = {
+
 		  Rotation_X: 0.01,
 		  Rotation_Y: 0.01,
 		  Rotation_Z: 0.01,
-  
-		  pause: function () {
+
+		  Pause: function () {
 			alert('Pause!');
 		  },
-  
+
 		  color: "#fff000"
-	
+
 	  };
-  
+
+    var Gui;
 	  var gui = new dat.gui.GUI();
-	  gui.add(obj, 'message');
-	  gui.add(obj, 'Rotation_X').min(0).max(0.1).step(0.01);
-	  gui.add(obj, 'Rotation_Y').min(0).max(0.1).step(0.01);
-	  gui.add(obj, 'Rotation_Z').min(0).max(0.1).step(0.01);
-	  gui.addColor(obj, 'color');
-	  gui.add(obj, 'pause');
-  
+
+    Gui = gui.addFolder( "Cube" );
+
+  	  Gui.add(obj, 'Rotation_X').min(0).max(0.1).step(0.01);
+  	  Gui.add(obj, 'Rotation_Y').min(0).max(0.1).step(0.01);
+  	  Gui.add(obj, 'Rotation_Z').min(0).max(0.1).step(0.01);
+
+    gui.addColor(obj, 'color').name("Background");
+    gui.add(obj, 'Pause');
+
+    Gui = gui.addFolder( "Lobster" );
 	</script>
 
 	<script>
