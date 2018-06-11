@@ -1,45 +1,49 @@
 <html>
     <head>
-	<title>W05: Example 01</title>
+	<title>visualization final task</title>
     </head>
     <body>
 	<script src="three.min.js"></script>
 	<script src="three.js"></script>
-	<script src="cube1.js"></script>
+	<script src="cube.js"></script>
+
+  <script src="three.min.js"></script>
+	<script src="TrackballControls.js"></script>
+	<script src="Lut.js"></script>
+	<script src="KVS.min.js"></script>
+	<script src="KVS2THREE.min.js"></script>
+	<script src="KVSLobsterData.js"></script>
+	<script src="Bounds.js"></script>
+	<script src="Isosurfaces.js"></script>
+	<script src="lobster.js"></script>
 
 	<script type="text/javascript" src="dat.gui.js"></script>
 	<script type="text/javascript">
 	 	  var obj = {
-
 		  Rotation_X: 0.01,
 		  Rotation_Y: 0.01,
 		  Rotation_Z: 0.01,
-
 		  Pause: function () {
 			alert('Pause!');
 		  },
-
 		  color: "#fff000"
-
 	  };
-
     var Gui;
 	  var gui = new dat.gui.GUI();
-
     Gui = gui.addFolder( "Cube" );
-
   	  Gui.add(obj, 'Rotation_X').min(0).max(0.1).step(0.01);
   	  Gui.add(obj, 'Rotation_Y').min(0).max(0.1).step(0.01);
   	  Gui.add(obj, 'Rotation_Z').min(0).max(0.1).step(0.01);
-
-    gui.addColor(obj, 'color').name("Background");
-    gui.add(obj, 'Pause');
+      Gui.addColor(obj, 'color').name("Background");
 
     Gui = gui.addFolder( "Lobster" );
+
+    gui.add(obj, 'Pause');
 	</script>
 
 	<script>
-	 cube1();
+	 cube();
+   lobster();
 	</script>
     </body>
 </html>
