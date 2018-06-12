@@ -1,21 +1,21 @@
-// var shaders = {
-//   Gouraud:new THREE.ShaderMaterial ({
-//     vertexColors: THREE.VertexColors,
-//     vertexShader: document.getElementById('gouraud.vert').text,
-//     fragmentShader: document.getElementById('gouraud.frag').text,
-//     uniforms: {
-//       light_position: { type: 'v3', value: light.position }
-//     }
-//   }),
-//   Phong:new THREE.ShaderMaterial ({
-//     vertexColors: THREE.VertexColors,
-//     vertexShader: document.getElementById('phong.vert').text,
-//     fragmentShader: document.getElementById('phong.frag').text,
-//     uniforms: {
-//       light_position: { type: 'v3', value: light.position }
-//     }
-//   })
-// };
+var shaders = {
+  Gouraud:new THREE.ShaderMaterial ({
+    vertexColors: THREE.VertexColors,
+    vertexShader: document.getElementById('gouraud.vert').text,
+    fragmentShader: document.getElementById('gouraud.frag').text,
+    uniforms: {
+      light_position: { type: 'v3', value: light.position }
+    }
+  }),
+  Phong:new THREE.ShaderMaterial ({
+    vertexColors: THREE.VertexColors,
+    vertexShader: document.getElementById('phong.vert').text,
+    fragmentShader: document.getElementById('phong.frag').text,
+    uniforms: {
+      light_position: { type: 'v3', value: light.position }
+    }
+  })
+};
 function torusknot() {
   var width = window.innerWidth *7/15 ;
   var height = window.innerHeight  *7/15 ;
