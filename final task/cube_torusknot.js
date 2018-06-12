@@ -73,6 +73,7 @@ function cube_torusknot() {
 
     var material;
   switch (obj.Shader) {
+    case 'NoShader': material = new THREE.ShaderMaterial ();break;
     case 'Gouraud':  material = Gouraud;break;
     case 'Phong': material = Phong;break;
   }
