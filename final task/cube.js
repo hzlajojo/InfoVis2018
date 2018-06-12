@@ -1,8 +1,7 @@
 function cube()
 {
-	var width = 400;
- 	var height = 400;
-
+	var width = window.innerWidth *7/15;
+  var height = window.innerHeight *7/15;
 	var camera, scene, renderer;
 	var mesh;
 	init();
@@ -17,7 +16,7 @@ function cube()
 		mesh = new THREE.Mesh( geometry, material );
 		scene.add( mesh );
 		renderer = new THREE.WebGLRenderer( { antialias: true } );
-		renderer.setClearColor(obj.color,1.0);// Color of renderer
+		renderer.setClearColor(obj.color , 1.0);// Color of renderer
 		renderer.setPixelRatio( window.devicePixelRatio );
 		renderer.setSize( width, height );
 		document.body.appendChild( renderer.domElement );
