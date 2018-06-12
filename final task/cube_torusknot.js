@@ -19,7 +19,7 @@ function cube_torusknot() {
 	renderer.setSize( width, height );
   document.body.appendChild( renderer.domElement );
 
-  var texture = new THREE.TextureLoader().load( 'dora.jpg' );
+  var texture = new THREE.TextureLoader().load( 'marvel.jpg' );
 	var geometry1 = new THREE.BoxBufferGeometry( 2, 2, 2 );
 	var material1 = new THREE.MeshBasicMaterial( { map: texture } );
 	var mesh = new THREE.Mesh( geometry1, material1 );
