@@ -1,3 +1,4 @@
+
 function cube_torusknot() {
   var width = window.innerWidth  ;
   var height = window.innerHeight/2 ;
@@ -29,7 +30,7 @@ function cube_torusknot() {
 	scene.add( mesh );
 
   var geometry2 = new THREE.TorusKnotGeometry( 1, 0.3, 100, 20 );
-  var material2 = new THREE.ShaderMaterial ({
+  var Phong = new THREE.ShaderMaterial ({
     vertexColors: THREE.VertexColors,
     vertexShader: document.getElementById('phong.vert').text,
     fragmentShader: document.getElementById('phong.frag').text,
@@ -37,6 +38,15 @@ function cube_torusknot() {
       light_position: { type: 'v3', value: light.position }
     }
   });
+  var Gouraud = new THREE.ShaderMaterial ({
+    vertexColors: THREE.VertexColors,
+    vertexShader: document.getElementById('gouraud.vert').text,
+    fragmentShader: document.getElementById('gouraud.frag').text,
+    uniforms: {
+      light_position: { type: 'v3', value: light.position }
+    }
+  });
+  var material2 = Gouraud;
   var torus_knot = new THREE.Mesh( geometry2, material2 );
   torus_knot.position.x = 2;
   torus_knot.position.y = 0 ;
@@ -60,8 +70,17 @@ function cube_torusknot() {
   	mesh.rotation.x += obj.Rotation_X;
   	mesh.rotation.y += obj.Rotation_Y;
   	mesh.rotation.z += obj.Rotation_Z;
+
+    var material;
+  switch (obj.Shader) {
+    case 'Gouraud':  material = Gouraud;break;
+    case 'Phong': material = Phong;break;
+  }
+    torus_knot.material = material;
     torus_knot.rotation.x += 0.01;
     torus_knot.rotation.y += 0.01;
+
+
 
     renderer.render( scene, camera );
   }

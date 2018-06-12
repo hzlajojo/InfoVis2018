@@ -34,16 +34,27 @@
 	  };
     var Gui;
 	  var gui = new dat.gui.GUI();
+    gui.addColor(obj, 'color').name("Background");
     Gui = gui.addFolder( "Cube" );
   	  Gui.add(obj, 'Rotation_X').min(0).max(0.1).step(0.01);
   	  Gui.add(obj, 'Rotation_Y').min(0).max(0.1).step(0.01);
   	  Gui.add(obj, 'Rotation_Z').min(0).max(0.1).step(0.01);
-      Gui.addColor(obj, 'color').name("Background");
+    Gui.open();
 
     Gui = gui.addFolder( "TorusKnot" );
-      // Gui.add(obj, 'Shader',Object.keys(shaders)).onChange(  function (){
+      Gui.add(obj, 'Shader', ['Gouraud' ,'Phong'] );
+      // .onChange(  function (value){
+      //   if ( mesh !== undefined ) {
+      //
+			// 	parent.remove( mesh );
+			// 	mesh.geometry.dispose();
+      //
+			// }
+      // var temp = shaders[obj.Shader];
+      //
       //
       // });
+    Gui.open();
 
     Gui = gui.addFolder( "Lobster" );
       Gui.addColor(obj, 'lobstercolor').name("LobsterColor").onChange(  function (){
@@ -66,7 +77,7 @@
               }
 
           });
-
+    Gui.open();
     gui.add(obj, 'Pause');
 	</script>
 
