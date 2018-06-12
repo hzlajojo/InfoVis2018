@@ -62,7 +62,7 @@ function Isosurfaces( volume, isovalue )
 
     geometry.computeVertexNormals();
 
-    material.color = new THREE.Color( "white" );
+    material.color = new THREE.Color( obj.lobstercolor );
 
     return new THREE.Mesh( geometry, material );
 
@@ -112,4 +112,5 @@ function Isosurfaces( volume, isovalue )
     {
         return new THREE.Vector3().addVectors( v0, v1 ).divideScalar( 2 );
     }
+
 }
