@@ -20,9 +20,10 @@ function cube_torusknot() {
 	renderer.setSize( width, height );
   document.body.appendChild( renderer.domElement );
 
-  var texture = new THREE.TextureLoader().load( 'marvel.jpg' );
+  var texture1 = new THREE.TextureLoader().load( 'doraemon.jpg' );
+  var texture2 = new THREE.TextureLoader().load( 'marvel.jpg' );
 	var geometry1 = new THREE.BoxBufferGeometry( 2, 2, 2 );
-	var material1 = new THREE.MeshBasicMaterial( { map: texture } );
+	var material1 = new THREE.MeshBasicMaterial( { map: texture1 } );
 	var mesh = new THREE.Mesh( geometry1, material1 );
   mesh.position.x = -2;
   mesh.position.y =0;
@@ -66,7 +67,10 @@ function cube_torusknot() {
   function loop() {
     requestAnimationFrame( loop );
     renderer.setClearColor(obj.color,1.0);// Color of renderer
-
+    switch (obj.Image) {
+      case 'doraemon': mesh.material = new THREE.MeshBasicMaterial( { map: texture1 } );break;
+      case 'marvel':  mesh.material = new THREE.MeshBasicMaterial( { map: texture2 } );break;
+    }
   	mesh.rotation.x += obj.Rotation_X;
   	mesh.rotation.y += obj.Rotation_Y;
   	mesh.rotation.z += obj.Rotation_Z;
