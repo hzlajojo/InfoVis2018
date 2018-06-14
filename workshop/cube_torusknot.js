@@ -6,29 +6,27 @@ function cube_torusknot() {
   var scene = new THREE.Scene();
 
   var camera = new THREE.PerspectiveCamera( 45, width / height, 1, 1000 );
-  		// camera.position.z = 400;
   camera.position.set( 0, 0, 5 );
-  // scene.add( camera );
 
   var light = new THREE.PointLight();
   light.position.set( 5, 5, 5 );
   scene.add( light );
 
   var renderer = new THREE.WebGLRenderer( { antialias: true }  );
-	renderer.setClearColor(obj.color , 1.0);// Color of renderer
+  renderer.setClearColor(obj.color , 1.0);// Color of renderer
   renderer.setPixelRatio( window.devicePixelRatio );
-	renderer.setSize( width, height );
+  renderer.setSize( width, height );
   document.body.appendChild( renderer.domElement );
 
   var texture1 = new THREE.TextureLoader().load( 'doraemon.jpg' );
   var texture2 = new THREE.TextureLoader().load( 'marvel.jpg' );
-	var geometry1 = new THREE.BoxBufferGeometry( 2, 2, 2 );
-	var material1 = new THREE.MeshBasicMaterial( { map: texture1 } );
-	var mesh = new THREE.Mesh( geometry1, material1 );
+  var geometry1 = new THREE.BoxBufferGeometry( 2, 2, 2 );
+  var material1 = new THREE.MeshBasicMaterial( { map: texture1 } );
+  var mesh = new THREE.Mesh( geometry1, material1 );
   mesh.position.x = -2;
   mesh.position.y =0;
   mesh.position.z = 0;
-	scene.add( mesh );
+  scene.add( mesh );
 
   var geometry2 = new THREE.TorusKnotGeometry( 1, 0.3, 100, 20 );
   var Phong = new THREE.ShaderMaterial ({
