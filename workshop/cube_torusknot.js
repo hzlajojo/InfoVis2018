@@ -61,7 +61,6 @@ function cube_torusknot() {
 	}
 
   loop();
-
   function loop() {
     requestAnimationFrame( loop );
     renderer.setClearColor(obj.color,1.0);// Color of renderer
@@ -82,8 +81,6 @@ function cube_torusknot() {
     torus_knot.material = material;
     torus_knot.rotation.x += 0.01;
     torus_knot.rotation.y += 0.01;
-
-
 
     renderer.render( scene, camera );
   }
