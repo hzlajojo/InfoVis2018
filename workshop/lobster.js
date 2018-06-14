@@ -6,9 +6,6 @@ var bounds;
 
 function lobster()
 {
-  // var width = window.innerWidth / 3;
-  // var height = window.innerHeight /3;
-
     screen= new KVS.THREEScreen();
 
     screen.init( volume, {
@@ -17,10 +14,8 @@ function lobster()
         enableAutoResize: false
     });
 
-
     surfaces = Isosurfaces( volume, isovalue );
     screen.scene.add( surfaces );
-
 
     document.addEventListener( 'mousemove', function() {
         screen.light.position.copy( screen.camera.position );
@@ -30,7 +25,5 @@ function lobster()
         screen.resize( [ width, height ] );
     });
 
-
     screen.loop();
-
 }
